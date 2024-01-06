@@ -20,23 +20,35 @@ composer require surazdott/laravel-repository-pattern
 #### Generating Classes
 You can also generate repository class indivisually or can be generated with options.
 
+#### `Basic Commands`
+
+Generate repository class
 ```bash
-// generate repository class
 php artisan make:repository UserRepository
+```
 
-// or generate repository class with service
+Generate repository class with service
+```bash
 php artisan make:repository UserRepository --service
+```
 
-// or generate repository class with interface
+Generate repository class with interface
+```bash
 php artisan make:repository UserRepository --interface
+```
 
-// generate service class
+Generate service class
+```bash
 php artisan make:service UserService
+```
 
-// generate interface class
+Generate interface class
+```bash
 php artisan make:interface UserRepositoryInterface
+```
 
-// for help
+To find help and options
+```bash
 php artisan make:repository --help
 ```
 
@@ -47,7 +59,7 @@ Suppose you want to create a new database record, instantiate the associated rep
 
 - `use SurazDott\Repositories\BaseRepository;`
 
-- `use SurazDott\Repositories\BaseRepository;`
+- `use SurazDott\Services\BaseService;`
 
 
 Some of the functions are predefined and can be extended in your repository and service class.
@@ -258,7 +270,7 @@ class UserService extends BaseService
      */
     public function findById($id): ?Model
     {
-        return $this->repository->find($id);
+        return $this->repository->findById($id);
     }
 }
 ```
